@@ -1,6 +1,6 @@
 # Linux Go Install/Update Script
 
-A bash script that installs/updates your Go version on linux.
+A custom bash script that installs/updates your Go version on linux.
 
 ## Running the script
 
@@ -27,3 +27,7 @@ _Note: Changes made to a profile file may not apply until the next time you log 
 ```bash
 go version
 ```
+
+## Official Docs
+
+For the official docs on how to install/update Go, please refer to <https://go.dev/doc/install>
