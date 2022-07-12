@@ -1,0 +1,8 @@
+LATEST_GO_VERSION=$(curl -s https://go.dev/dl/\?mode\=json | grep -m 1 version | awk -F ":" '{print $NF}' | tr -d ' ",')
+LINUX_GO_INSTALL_PACKAGE="$LATEST_GO_VERSION.linux-amd64.tar.gz"
+URL="https://go.dev/dl/${LINUX_GO_INSTALL_PACKAGE}"
+wget "$URL"
+sudo rm -rf /usr/local/go 
+sudo tar -C /usr/local -xzf $LINUX_GO_INSTALL_PACKAGE
+rm "${LINUX_GO_INSTALL_PACKAGE}"
+echo "✅ Done! Remember to either source your bash/zsh config or logout & login again to apply the changes!"
