@@ -1,6 +1,6 @@
 # Linux Go Install/Update Script
 
-A custom bash script that installs/updates your Go version on linux.
+A custom bash script that installs/updates your Go version on linux. Because shipping a language with a command that updates itself is way too mainstream.
 
 ## Running the script
 
