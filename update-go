@@ -5,4 +5,4 @@ wget "$URL"
 sudo rm -rf /usr/local/go 
 sudo tar -C /usr/local -xzf $LINUX_GO_INSTALL_PACKAGE
 rm "${LINUX_GO_INSTALL_PACKAGE}"
-echo "✅ Done! Remember to either source your bash/zsh config or logout & login again to apply the changes!"
+echo "✅ Done!"
