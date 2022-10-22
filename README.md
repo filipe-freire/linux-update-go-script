@@ -2,13 +2,7 @@
 
 A custom bash script that installs/updates your Go version on linux. Because shipping a language with a command that updates itself is way too mainstream.
 
-## Running the script
-
-```bash
-sh ./update-go
-```
-
-## Post Script Steps
+## Pre-Script Steps
 
 **If it's your first time installing go:**
 
@@ -26,6 +20,12 @@ _Note: Changes made to a profile file may not apply until the next time you log 
 
 ```bash
 go version
+```
+
+## Running the script
+
+```bash
+sh ./update-go
 ```
 
 ## Official Docs
