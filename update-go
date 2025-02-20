@@ -1,6 +1,7 @@
 # Color variables
 grn='\e[1;32m'
 blu='\e[1;34m'
+reset='\e[0m'
 
 LATEST_GO_VERSION=$(curl -s https://go.dev/dl/\?mode\=json | grep -m 1 version | awk -F ":" '{print $NF}' | tr -d ' ",' | sed s/go//)
 CURRENT_GO_VERSION=$(go version | awk '{print $3}' | sed s/go//)
@@ -14,16 +15,16 @@ else
   echo "Your current go version is: ${CURRENT_GO_VERSION} while the latest is: ${LATEST_GO_VERSION}. Updating now ✅"
 fi
 
-printf "⚡ ${grn}Downloading newest Go version${grn}\n"
+printf "⚡ ${grn}Downloading newest Go version${reset}\n"
 wget $URL
 
-printf "⌛ ${grn}Removing previous Go Version${grn}\n"
+printf "⌛ ${grn}Removing previous Go Version${reset}\n"
 sudo rm -rf /usr/local/go
 
-printf "📦 ${grn}Unpacking the updated Go Version${grn}\n"
+printf "📦 ${grn}Unpacking the updated Go Version${reset}\n"
 sudo tar -C /usr/local -xzf $LINUX_GO_INSTALL_PACKAGE
 
-printf "✅ ${grn}Cleaning up, almost done!${grn}\n"
+printf "✅ ${grn}Cleaning up, almost done!${reset}\n"
 rm $LINUX_GO_INSTALL_PACKAGE
 
-echo "🎉 ${blu}Done!${blu}"
+printf "🎉 ${blu}Done!${reset}\n"
