@@ -10,6 +10,12 @@ CURRENT_GO_VERSION=$(go version | awk '{print $3}' | sed s/go//)
 LINUX_GO_INSTALL_PACKAGE="go$LATEST_GO_VERSION.linux-amd64.tar.gz"
 URL="https://go.dev/dl/${LINUX_GO_INSTALL_PACKAGE}"
 
+# TODO: check if LATEST_GO_VERSION is a semantic version
+if [ "$LATEST_GO_VERSION" = "" ]; then
+  echo "Could not get the latest Go version. Please check your internet connection and try again."
+  exit 1
+fi
+
 if [ "$LATEST_GO_VERSION" = "$CURRENT_GO_VERSION" ]; then
   echo "Your Go version is up to date! 🎉"
   exit 0
